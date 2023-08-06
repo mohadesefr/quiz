@@ -51,6 +51,7 @@ function startQuiz() {
     showQuestion();
 }
 
+// showing questions and remove the previous question
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -71,6 +72,9 @@ function showQuestion() {
 
 }
 
+
+// i can not understand these line of codes!!!!
+// rest the question
 function resetState() {
 
     nextButton.style.display = 'none';
@@ -80,6 +84,8 @@ function resetState() {
     }
 }
 
+
+// style of correct and incorrect question
 function selectAnswer(e) {
     const selectBtn = e.target;
     const isCorrect = selectBtn.dataset.correct === 'true';
@@ -91,6 +97,8 @@ function selectAnswer(e) {
         selectBtn.classList.add('incorrect');
 
     };
+
+    // when you click wrong question show the correct one
     Array.from(answerButtons.children).forEach(button => {
         if (button.dataset.correct === 'true') {
             button.classList.add('correct');
